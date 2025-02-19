@@ -1,3 +1,5 @@
+package aoc2024
+
 fun main() {
     fun part1(input: List<String>): Int {
         return input.size
