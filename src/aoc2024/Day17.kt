@@ -4,6 +4,8 @@ import AocApplication
 import kotlin.math.pow
 import kotlin.math.roundToInt
 import kotlin.math.truncate
+import utils.println
+import utils.readInput
 
 class Day17 : AocApplication {
     private val registers = mutableMapOf<Int, Int>()

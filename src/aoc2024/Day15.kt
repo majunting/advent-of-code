@@ -3,6 +3,9 @@ package aoc2024
 import AocApplication
 import java.io.BufferedWriter
 import java.io.File
+import utils.plus
+import utils.println
+import utils.readInput
 
 class Day15 : AocApplication {
     var input: MutableList<MutableList<Char>> = mutableListOf()

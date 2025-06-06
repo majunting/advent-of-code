@@ -1,25 +1,24 @@
-import aoc2024.chooseClassFromDay2024
+import utils.loadAocApplication
 
 interface AocApplication {
     fun run(fileName: String): Pair<Any, Any>
 }
 
 fun main(args: Array<String>) {
-    val day = 21
-
-    runApp2024(day, true)
-    runApp2024(day, false)
+    val year = 2015
+    val day = 3
+    val app: AocApplication = loadAocApplication(year, day)
+    app.runApp(year, day, true)
+    app.runApp(year, day, false)
 }
 
-fun runApp2024(day: Int, isTest: Boolean = false) {
-    val app: AocApplication = chooseClassFromDay2024(day)
+fun AocApplication.runApp(year: Int, day: Int, isTest: Boolean = false) {
     when (isTest) {
-        true -> app.run("day${day.toString().padStart(2, '0')}test").printRes(day, true)
-        false -> app.run("day${day.toString().padStart(2, '0')}").printRes(day, false)
+        true -> this.run("src/aoc$year/resources/day${day.toString().padStart(2, '0')}test.txt").printRes(day, true)
+        false -> this.run("src/aoc$year/resources/day${day.toString().padStart(2, '0')}.txt").printRes(day, false)
 
     }
 }
-
 
 fun Pair<Any, Any>.printRes(day: Int, isTest: Boolean = false) {
     val dayStr =

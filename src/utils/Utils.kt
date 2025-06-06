@@ -1,12 +1,13 @@
-package aoc2024
+package utils
 
 import AocApplication
 import java.math.BigInteger
 import java.security.MessageDigest
 import kotlin.io.path.Path
 import kotlin.io.path.readText
+import kotlin.reflect.full.createInstance
 
-fun readInput(name: String) = Path("src/aoc2024/resources/$name.txt").readText().trim().lines()
+fun readInput(name: String) = Path(name).readText().trim().lines()
 
 /**
  * Converts string to md5 hash.
@@ -26,23 +27,10 @@ val directions = listOf(Pair(-1, 0), Pair(0, 1), Pair(1, 0), Pair(0, -1))
 
 val allDirections = directions.plus(listOf(Pair(-1, 1), Pair(1, 1), Pair(1, -1), Pair(-1, -1)))
 
-fun chooseClassFromDay2024(day: Int): AocApplication = when(day) {
-    9 -> Day09()
-    10 -> Day10()
-    11 -> Day11()
-    12 -> Day12()
-    13 -> Day13()
-    14 -> Day14()
-    15 -> Day15()
-    16 -> Day16()
-    17 -> Day17()
-    18 -> Day18()
-    19 -> Day19()
-    20 -> Day20()
-    21 -> Day21()
-    22 -> Day22()
-    23 -> Day23()
-    24 -> Day24()
-    25 -> Day25()
-    else -> throw IllegalArgumentException("Unknown day: $day")
+fun loadAocApplication(year: Int, day: Int): AocApplication {
+    val className = "aoc$year.Day${day.toString().padStart(2, '0')}"
+    val clazz = Class.forName(className).kotlin
+    val instance = clazz.objectInstance ?: clazz.createInstance()
+    if (instance is AocApplication) return instance
+    else error("unable to load AocApplication for year: $year, day: $day")
 }

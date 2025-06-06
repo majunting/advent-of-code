@@ -1,7 +1,9 @@
 package aoc2024
 
+import utils.readInput
+
 fun main() {
-    val input = readInput("day07")
+    val input = readInput("src/aoc2024/resources/day07.txt")
     val inputMap = input.map {
         it.split(": ")[0].toLong() to it.split(": ")[1].split(' ').map { it.toLong() }
     }

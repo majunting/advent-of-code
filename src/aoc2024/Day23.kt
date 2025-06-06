@@ -1,6 +1,7 @@
 package aoc2024
 
 import AocApplication
+import utils.readInput
 
 class Day23 : AocApplication {
     var computerLinks = mutableMapOf<String, List<String>>()

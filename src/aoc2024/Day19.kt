@@ -1,6 +1,8 @@
 package aoc2024
 
 import AocApplication
+import utils.println
+import utils.readInput
 
 class Day19 : AocApplication {
     var minLength = 10

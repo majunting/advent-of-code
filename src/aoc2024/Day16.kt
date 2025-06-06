@@ -1,6 +1,8 @@
 package aoc2024
 
 import AocApplication
+import utils.plus
+import utils.readInput
 
 class Day16 : AocApplication {
     val directions = listOf(Pair(-1, 0), Pair(0, 1), Pair(1, 0), Pair(0, -1))

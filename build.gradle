@@ -31,4 +31,5 @@ tasks.wrapper {
 
 dependencies {
     implementation("io.github.microutils:kotlin-logging-jvm:$kotlin_logging_version")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
 }

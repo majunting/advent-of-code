@@ -3,6 +3,8 @@ package aoc2024
 import AocApplication
 import kotlin.math.abs
 import kotlin.math.log10
+import utils.println
+import utils.readInput
 
 class Day11 : AocApplication {
     override fun run(fileName: String): Pair<Long, Long> {

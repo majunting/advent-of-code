@@ -1,6 +1,8 @@
 package aoc2024
 
 import AocApplication
+import utils.println
+import utils.readInput
 
 class Day22 : AocApplication {
     var secretNumberList = mutableListOf<MutableList<Int>>()

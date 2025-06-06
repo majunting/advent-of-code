@@ -2,6 +2,10 @@ package aoc2024
 
 import AocApplication
 import kotlin.math.abs
+import utils.directions
+import utils.plus
+import utils.println
+import utils.readInput
 
 class Day20 : AocApplication {
     private var inputMap = mutableListOf<MutableList<Int>>()

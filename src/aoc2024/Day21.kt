@@ -1,6 +1,8 @@
 package aoc2024
 
 import AocApplication
+import utils.println
+import utils.readInput
 
 // 139866567425678 too low
 // 340577114764646 too high

@@ -2,6 +2,8 @@ package aoc2024
 
 import AocApplication
 import kotlin.math.min
+import utils.println
+import utils.readInput
 
 data class ClawMachine(
     val ax: Int,

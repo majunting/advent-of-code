@@ -1,12 +1,14 @@
 package aoc2024
 
+import utils.readInput
+
 fun main() {
     var res = 1
     var basePosition = Pair(0, 0)
     val directionDict = listOf(Pair(-1, 0), Pair(0, 1), Pair(1, 0), Pair(0, -1))
     var baseDirectionIndex = 0
     var notStuck = true
-    val input = readInput("day06")
+    val input = readInput("src/aoc2024/resources/day06.txt")
     val inputMap = input.mapIndexed { index, it ->
         it.mapIndexed { index2, c ->
             when (c) {

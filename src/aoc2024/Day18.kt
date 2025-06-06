@@ -1,6 +1,9 @@
 package aoc2024
 
 import AocApplication
+import utils.plus
+import utils.println
+import utils.readInput
 
 class Day18 : AocApplication {
     var inputMap = mutableListOf<MutableList<Int>>()

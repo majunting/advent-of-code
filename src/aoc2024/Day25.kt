@@ -1,6 +1,7 @@
 package aoc2024
 
 import AocApplication
+import utils.readInput
 
 class Day25 : AocApplication {
     override fun run(fileName: String): Pair<Long, Long> {

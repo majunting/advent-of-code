@@ -3,6 +3,8 @@ package aoc2024
 import AocApplication
 import java.io.BufferedWriter
 import java.io.File
+import utils.println
+import utils.readInput
 
 class Day14 : AocApplication {
     var bufferedWriter: BufferedWriter? = null
