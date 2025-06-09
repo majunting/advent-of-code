@@ -6,7 +6,7 @@ interface AocApplication {
 
 fun main(args: Array<String>) {
     val year = 2015
-    val day = 3
+    val day = 9
     val app: AocApplication = loadAocApplication(year, day)
     app.runApp(year, day, true)
     app.runApp(year, day, false)
