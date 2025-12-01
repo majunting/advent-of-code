@@ -2,6 +2,10 @@ package aoc2024
 
 import AocApplication
 import kotlin.math.abs
+import utils.directions
+import utils.plus
+import utils.println
+import utils.readInput
 
 class Day20 : AocApplication {
     private var inputMap = mutableListOf<MutableList<Int>>()
@@ -9,8 +13,8 @@ class Day20 : AocApplication {
     private var initialPos = Pair(0, 0)
     private var finalPos = Pair(0, 0)
     private var isTest = false
-    override fun run(fileName: String): Pair<Any, Any> {
-        val input = readInput(fileName)
+    override fun run(year: Int, fileName: String): Pair<Any, Any> {
+        val input = readInput(year, fileName)
         if (fileName.contains("test")) {
             isTest = true
             val test = 32+31+29+39+25+23+20+19+12+14+12+22+4+3

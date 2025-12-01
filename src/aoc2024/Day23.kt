@@ -1,13 +1,14 @@
 package aoc2024
 
 import AocApplication
+import utils.readInput
 
 class Day23 : AocApplication {
     var computerLinks = mutableMapOf<String, List<String>>()
     var interconnectedComputersPart1 = mutableListOf<Triple<String, String, String>>()
     val interconnectedComputers = mutableListOf<MutableList<String>>()
-    override fun run(fileName: String): Pair<Any, Any> {
-        val input = readInput(fileName)
+    override fun run(year: Int, fileName: String): Pair<Any, Any> {
+        val input = readInput(year, fileName)
         val links = input.map { Pair(it.split("-")[0], it.split("-")[1]) }
         val res1 = this.part1(links)
         val res2 = this.part2(links)

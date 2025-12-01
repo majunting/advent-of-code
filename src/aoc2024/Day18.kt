@@ -1,13 +1,16 @@
 package aoc2024
 
 import AocApplication
+import utils.plus
+import utils.println
+import utils.readInput
 
 class Day18 : AocApplication {
     var inputMap = mutableListOf<MutableList<Int>>()
     var dimension = 0
     val directions = listOf(Pair(-1, 0), Pair(0, 1), Pair(1, 0), Pair(0, -1))
     var limit = 0
-    override fun run(fileName: String): Pair<Long, Long> {
+    override fun run(year: Int, fileName: String): Pair<Long, Long> {
         if (fileName.contains("test")) {
             dimension = 7
             limit = 12
@@ -15,7 +18,7 @@ class Day18 : AocApplication {
             dimension = 71
             limit = 1024
         }
-        val fullInput = readInput(fileName).map { Pair(it.split(',')[1].toInt(), it.split(',')[0].toInt()) }
+        val fullInput = readInput(year, fileName).map { Pair(it.split(',')[1].toInt(), it.split(',')[0].toInt()) }
 //        fullInput.forEach(::println)
         val input =
             fullInput.subList(0, limit)

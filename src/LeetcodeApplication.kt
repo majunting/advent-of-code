@@ -1,5 +1,5 @@
 import leetcode.Qn2270
-import aoc2024.println
+import utils.println
 
 interface LeetcodeApplication {
     fun run(): Any

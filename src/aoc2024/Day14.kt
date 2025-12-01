@@ -3,6 +3,8 @@ package aoc2024
 import AocApplication
 import java.io.BufferedWriter
 import java.io.File
+import utils.println
+import utils.readInput
 
 class Day14 : AocApplication {
     var bufferedWriter: BufferedWriter? = null
@@ -10,7 +12,7 @@ class Day14 : AocApplication {
     var ylim = 0
     var initialPositions = mutableListOf<Pair<Int, Int>>()
     var moves = mutableListOf<Pair<Int, Int>>()
-    override fun run(fileName: String): Pair<Long, Long> {
+    override fun run(year: Int, fileName: String): Pair<Long, Long> {
         if (fileName == "day14test") {
             xlim = 7
             ylim = 11
@@ -19,7 +21,7 @@ class Day14 : AocApplication {
             ylim = 101
         }
         bufferedWriter = File("src/aoc2024.resources/$fileName-output.txt").bufferedWriter()
-        val input = readInput(fileName)
+        val input = readInput(year, fileName)
         val inputPos = input.map {
             Pair(
                 it.split(" ")[0].split("=")[1].split(",")[1].toInt(),

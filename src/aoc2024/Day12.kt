@@ -1,11 +1,13 @@
 package aoc2024
 
 import AocApplication
+import utils.println
+import utils.readInput
 
 class Day12 : AocApplication {
     private var inputMap = mutableListOf<MutableList<Char>>()
-    override fun run(fileName: String): Pair<Long, Long> {
-        val input = readInput(fileName)
+    override fun run(year: Int, fileName: String): Pair<Long, Long> {
+        val input = readInput(year, fileName)
         inputMap = input.map { it.toMutableList() }.toMutableList()
         inputMap.println()
 

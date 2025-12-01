@@ -1,6 +1,8 @@
 package aoc2024
 
 import AocApplication
+import utils.println
+import utils.readInput
 
 class Day24 : AocApplication {
     var knowns = mutableMapOf<String, Int>()
@@ -9,8 +11,8 @@ class Day24 : AocApplication {
     var equations = mutableMapOf<Int, Pair<String, Triple<String, String, String>>>()
     var unknowns = mutableListOf<String>()
 
-    override fun run(fileName: String): Pair<Any, Any> {
-        val input = readInput(fileName)
+    override fun run(year: Int, fileName: String): Pair<Any, Any> {
+        val input = readInput(year, fileName)
         knowns =
             input.filter { it.contains(':') }.map { it.split(':')[0] to it.split(": ")[1].toInt() }.toMap()
                 .toMutableMap()

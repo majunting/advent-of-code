@@ -3,10 +3,12 @@ package aoc2024
 import AocApplication
 import kotlin.math.abs
 import kotlin.math.log10
+import utils.println
+import utils.readInput
 
 class Day11 : AocApplication {
-    override fun run(fileName: String): Pair<Long, Long> {
-        val input = readInput(fileName)[0].split(' ').map { it.toLong() }
+    override fun run(year: Int, fileName: String): Pair<Long, Long> {
+        val input = readInput(year, fileName)[0].split(' ').map { it.toLong() }
         input.println()
         val res1 = this.part1(input)
         val res2 = this.part2(input)

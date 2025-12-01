@@ -1,14 +1,16 @@
 package aoc2024
 
 import AocApplication
+import utils.plus
+import utils.readInput
 
 class Day16 : AocApplication {
     val directions = listOf(Pair(-1, 0), Pair(0, 1), Pair(1, 0), Pair(0, -1))
     var inputMap = mutableListOf<MutableList<Char>>()
     var scoreMap = mutableListOf<MutableList<MutableList<Long>>>()
     var part2List = mutableListOf<Pair<Int, Int>>()
-    override fun run(fileName: String): Pair<Long, Long> {
-        val input = readInput(fileName)
+    override fun run(year: Int, fileName: String): Pair<Long, Long> {
+        val input = readInput(year, fileName)
         inputMap = input.map { it.toMutableList() }.toMutableList()
         scoreMap = inputMap.map {
             it.map { c ->

@@ -1,11 +1,12 @@
 package aoc2024
 
 import AocApplication
+import utils.readInput
 
 class Day10 : AocApplication {
     val directions = listOf(Pair(-1, 0), Pair(0, 1), Pair(1, 0), Pair(0, -1))
-    override fun run(fileName: String): Pair<Long, Long> {
-        val input = readInput(fileName).map { it.map { c -> c.digitToInt() } }
+    override fun run(year: Int, fileName: String): Pair<Any, Any> {
+        val input = readInput(2024, fileName).map { it.map { c -> c.digitToInt() } }
         val res1 = this.part1(input)
         val res2 = this.part2(input)
         return res1 to res2

@@ -1,13 +1,15 @@
 package aoc2024
 
 import AocApplication
+import utils.println
+import utils.readInput
 
 class Day19 : AocApplication {
     var minLength = 10
     private val memoPart1 = mutableMapOf<String, Boolean>()
     private val memoPart2 = mutableMapOf<String, Long>()
-    override fun run(fileName: String): Pair<Long, Long> {
-        val input = readInput(fileName)
+    override fun run(year: Int, fileName: String): Pair<Long, Long> {
+        val input = readInput(year, fileName)
         val towels = input[0].split(", ")
         towels.forEach {
             memoPart1[it] = true

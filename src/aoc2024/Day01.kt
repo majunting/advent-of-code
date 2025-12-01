@@ -1,6 +1,7 @@
 package aoc2024
 
 import kotlin.math.abs
+import utils.println
 
 fun main() {
     val list1 = listOf(
