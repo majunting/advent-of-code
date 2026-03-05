@@ -13,7 +13,7 @@ interface AocApplication {
 }
 
 fun main(args: Array<String>) {
-    val day = 1
+    val day = 8
     val year = 2025
 
     runApp(year, day, true)
