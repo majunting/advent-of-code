@@ -49,13 +49,18 @@ fun Any?.println() = println(this)
 fun Pair<Int, Int>.plus(b: Pair<Int, Int>) = Pair(this.first + b.first, this.second + b.second)
 
 data class Point3D(
+    val x: Double,
+    val y: Double,
+    val z: Double,
+)
+
+data class Point(
     val x: Long,
     val y: Long,
-    val z: Long,
 )
 
 fun distance3D(p1: Point3D, p2: Point3D): Double =
-    sqrt(((p1.x - p2.x).times(p1.x - p2.x) + (p1.y - p2.y).times(p1.y - p2.y) + (p1.z - p2.z).times(p1.z - p2.z)).toDouble())
+    sqrt((p1.x - p2.x).times(p1.x - p2.x) + (p1.y - p2.y).times(p1.y - p2.y) + (p1.z - p2.z).times(p1.z - p2.z))
 
 fun String.longNumPlus(str: String): String {
     val res = StringBuilder()
@@ -114,6 +119,7 @@ fun chooseClass(year: Int, day: Int): AocApplication =
             9 -> aoc2025.Day09()
             10 -> aoc2025.Day10()
             11 -> aoc2025.Day11()
+            12 -> aoc2025.Day12()
             else -> throw IllegalArgumentException("Unknown day for $year: $day")
         }
 
