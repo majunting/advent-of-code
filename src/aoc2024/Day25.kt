@@ -1,10 +1,11 @@
 package aoc2024
 
 import AocApplication
+import utils.readInput
 
 class Day25 : AocApplication {
-    override fun run(fileName: String): Pair<Long, Long> {
-        val input = readInput(fileName).partition { it == "" }.second.chunked(7)
+    override fun run(year: Int, fileName: String): Pair<Long, Long> {
+        val input = readInput(year, fileName).partition { it == "" }.second.chunked(7)
         val rawLocks = input.filter { it[0] == "#####" }
         val rawKeys = input.filterNot { it[0] == "#####" }
         val locks = computeHeights(rawLocks)

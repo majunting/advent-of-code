@@ -1,8 +1,11 @@
 package aoc2024
 
+import utils.println
+import utils.readInput
+
 fun main() {
     val input =
-        readInput("day02").map { it.split(" ").toList().map { it.toInt() } }
+        readInput(2024, "day02").map { it.split(" ").toList().map { it.toInt() } }
 
     val safeList = input.map {
         isSafe(it)

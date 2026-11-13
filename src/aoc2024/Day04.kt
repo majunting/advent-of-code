@@ -1,7 +1,9 @@
 package aoc2024
 
+import utils.readInput
+
 fun main() {
-    val inputs = readInput("day04")
+    val inputs = readInput(2024, "day04")
     var res = findXmasHorizontal(inputs)
     res += findXmasHorizontal(transposeMatrix(inputs))
     res += findXmasHorizontal(getDiagonalMatrix(inputs))

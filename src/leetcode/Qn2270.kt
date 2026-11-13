@@ -1,7 +1,6 @@
 package leetcode
 
 import LeetcodeApplication
-import aoc2024.println
 
 class Qn2270 : LeetcodeApplication {
     private val input1 = listOf(10, 4, -8, 7).toIntArray()

@@ -3,15 +3,18 @@ package aoc2024
 import AocApplication
 import java.io.BufferedWriter
 import java.io.File
+import utils.plus
+import utils.println
+import utils.readInput
 
 class Day15 : AocApplication {
     var input: MutableList<MutableList<Char>> = mutableListOf()
     val directions = listOf(Pair(-1, 0), Pair(0, 1), Pair(1, 0), Pair(0, -1))
     var bufferedWriter: BufferedWriter? = null
 
-    override fun run(fileName: String): Pair<Long, Long> {
+    override fun run(year: Int, fileName: String): Pair<Long, Long> {
         bufferedWriter = File("src/aoc2024.resources/$fileName-output.txt").bufferedWriter()
-        val input = readInput(fileName)
+        val input = readInput(year, fileName)
         val emptyListIdx = input.indexOf("")
         val inputMap = input.subList(0, emptyListIdx)
         val steps = input.subList(emptyListIdx + 1, input.size).fold(StringBuilder()) { acc, s -> acc.append(s) }

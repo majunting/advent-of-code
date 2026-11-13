@@ -1,12 +1,14 @@
 package aoc2024
 
 import AocApplication
+import utils.println
+import utils.readInput
 
 class Day22 : AocApplication {
     var secretNumberList = mutableListOf<MutableList<Int>>()
     val diffMaps = mutableListOf<MutableMap<Int, Int>>()
-    override fun run(fileName: String): Pair<Any, Any> {
-        val input = readInput(fileName).map { it.toLong() }
+    override fun run(year: Int, fileName: String): Pair<Any, Any> {
+        val input = readInput(year, fileName).map { it.toLong() }
 
         val res1 = this.part1(input)
 //        same test input will give 24 for part 2 (sequence: -9 9 -1 0)

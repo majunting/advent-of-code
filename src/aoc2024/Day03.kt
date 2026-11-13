@@ -1,7 +1,9 @@
 package aoc2024
 
+import utils.readInput
+
 fun main() {
-    val inputs = readInput("day03tj")
+    val inputs = readInput(2024, "day03tj")
     val input = inputs.fold("") { acc, str -> acc.plus(str) }
     val res1 = extractNumberPairs(input)
         .fold(0) { acc2, pair -> acc2 + pair.first * pair.second }

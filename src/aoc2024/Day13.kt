@@ -2,6 +2,8 @@ package aoc2024
 
 import AocApplication
 import kotlin.math.min
+import utils.println
+import utils.readInput
 
 data class ClawMachine(
     val ax: Int,
@@ -17,8 +19,8 @@ data class ClawMachine(
 }
 
 class Day13 : AocApplication {
-    override fun run(fileName: String): Pair<Long, Long> {
-        val input = readInput(fileName).filterNot { it == "" }
+    override fun run(year: Int, fileName: String): Pair<Long, Long> {
+        val input = readInput(year, fileName).filterNot { it == "" }
         val clawMachineInput =
             input.filter { it.startsWith("Button A") }.zip(input.filter { it.startsWith("Button B") })
                 .zip(input.filter { it.startsWith("Prize") }).map {

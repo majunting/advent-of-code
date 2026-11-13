@@ -4,14 +4,16 @@ import AocApplication
 import kotlin.math.pow
 import kotlin.math.roundToInt
 import kotlin.math.truncate
+import utils.println
+import utils.readInput
 
 class Day17 : AocApplication {
     private val registers = mutableMapOf<Int, Int>()
     private var programs = mutableListOf<Int>()
     private var instructionPointer = 0
     var res = mutableListOf<Int>()
-    override fun run(fileName: String): Pair<Any, Any> {
-        val input = readInput(fileName)
+    override fun run(year: Int, fileName: String): Pair<Any, Any> {
+        val input = readInput(year, fileName)
         registers.put(0, input.filter { it.startsWith("Register A:") }[0].split(": ")[1].toInt())
         registers.put(1, input.filter { it.startsWith("Register B:") }[0].split(": ")[1].toInt())
         registers.put(2, input.filter { it.startsWith("Register C:") }[0].split(": ")[1].toInt())

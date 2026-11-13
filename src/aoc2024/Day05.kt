@@ -1,15 +1,18 @@
 package aoc2024
 
+import utils.println
+import utils.readInput
+
 class Node(
     val value: Int,
     val parent: List<Node> = listOf()
 )
 
 fun main() {
-    val rulesInput = readInput("day05p1").map {
+    val rulesInput = readInput(2024, "day05p1").map {
         Pair(it.split('|')[0].toInt(), it.split('|')[1].toInt())
     }
-    val pagesInput = readInput("day05p2").map {
+    val pagesInput = readInput(2024, "day05p2").map {
         it.split(',').map { it.toInt() }
     }
     val rulesNodeMap = mutableMapOf<Int, Node>()

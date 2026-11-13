@@ -1,6 +1,8 @@
 package aoc2024
 
 import AocApplication
+import utils.println
+import utils.readInput
 
 // 139866567425678 too low
 // 340577114764646 too high
@@ -10,18 +12,18 @@ class Day21 : AocApplication {
 	val numberPad = listOf("789", "456", "123", " 0A")
 	val directionPad = listOf(" ^A", "<v>")
 	val pairConversionMap = mutableMapOf<Pair<Pair<Int, Int>, Pair<Int, Int>>, Map<Pair<Pair<Int, Int>, Pair<Int, Int>>, Long>>(Pair(Pair(0, 2), Pair(0, 2)) to mapOf(Pair(Pair(0, 2), Pair(0, 2)) to 1))
-	override fun run(fileName: String): Pair<Long, Long> {
-		val input = readInput(fileName)
+	override fun run(year: Int, fileName: String): Pair<Long, Long> {
+		val input = readInput(year, fileName)
 
 		if (fileName.contains("test")) {
 			"Sample part 2 result: 154115708116294".println()
 		}
-		val res1 = this.part1(input)
-		val res2 = this.part2(input)
+		val res1 = this.defaultPart1(input)
+		val res2 = this.defaultPart2(input)
 		return res1 to res2
 	}
 
-	private fun part1(input: List<String>): Long {
+	override fun defaultPart1(input: List<String>): Long {
 		val res = input.fold(0L) { acc, str ->
 			val num = str.dropLast(1).toLong()
 			val initialStr = processInitialStr(str)
@@ -43,7 +45,7 @@ class Day21 : AocApplication {
 		return res
 	}
 
-	private fun part2(input: List<String>): Long {
+	override fun defaultPart2(input: List<String>): Long {
 		val res = input.fold(0L) { acc, str ->
 			val num = str.dropLast(1).toLong()
 			val initialStr = processInitialStr(str)
