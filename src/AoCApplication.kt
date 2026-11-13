@@ -5,7 +5,10 @@ interface AocApplication {
     fun run(year: Int, fileName: String): Pair<Any, Any> {
         val input = readInput(year, fileName)
         return defaultPart1(input) to defaultPart2(input)
+//        return defaultPart1(input) to 0
     }
+
+    fun preprocess(input: List<String>) {}
 
     fun defaultPart1(input: List<String>): Any = 0
 

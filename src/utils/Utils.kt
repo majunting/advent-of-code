@@ -59,6 +59,11 @@ data class Point(
     val y: Long,
 )
 
+data class Node<T>(
+    val value: T,
+    val children: MutableList<T> = mutableListOf()
+)
+
 fun distance3D(p1: Point3D, p2: Point3D): Double =
     sqrt((p1.x - p2.x).times(p1.x - p2.x) + (p1.y - p2.y).times(p1.y - p2.y) + (p1.z - p2.z).times(p1.z - p2.z))
 

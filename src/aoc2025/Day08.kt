@@ -40,7 +40,7 @@ class Day08 : AocApplication {
         return BigDecimal(points[distanceList[idx].second].first.x * points[distanceList[idx].third].first.x).toPlainString()
     }
     
-    private fun preprocess(input: List<String>) {
+    override fun preprocess(input: List<String>) {
         points.clear()
         input.forEachIndexed { index, it ->
             points.add(
